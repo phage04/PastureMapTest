@@ -12,7 +12,6 @@ import MapKit
 import Each
 
 enum ButtonAction {
-    case startAddPasture
     case dropPin
     case savePasture
 }
@@ -24,7 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var crosshairImage: UIImageView!
     
     var manager: CLLocationManager?
-    var actionForButton: ButtonAction = .startAddPasture
+    var actionForButton: ButtonAction = .dropPin
     var regionRadius: CLLocationDistance = 1000
     var timer = Each(1).seconds
     var countdown = delay
@@ -44,14 +43,14 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        crosshairImage.isHidden = true
-        setBtnForCase(action: .startAddPasture)
+        crosshairImage.isHidden = false
+        setBtnForCase(action: .dropPin)
     }
     
     func setTimer() {
         self.timer.perform { () -> NextStep in
             self.countdown -= 1
-            if self.countdown == 0 {
+            if self.countdown == 0 && self.pastureMapBoundaries.count > 2 {
                 self.setBtnForCase(action: .savePasture)
                 return .stop
             }
@@ -62,6 +61,7 @@ class ViewController: UIViewController {
     
     func restoreTimer() {
         self.countdown = delay
+        self.setTimer()
     }
 
     func centerMapOnUserLocation() {
@@ -83,50 +83,36 @@ class ViewController: UIViewController {
     
     func buttonSelector(forAction action: ButtonAction) {
         switch action {
-        case .startAddPasture:
-            setBtnForCase(action: .dropPin)
-            crosshairImage.isHidden = false
-            pastureMapBoundaries.removeAll()
-            
         case .dropPin:
-            crosshairImage.isHidden = false
             dropPin()
             
         case .savePasture:
             createPolyline()
-            crosshairImage.isHidden = true
             pastureMapBoundaries.removeAll()
             timer.stop()
-            setBtnForCase(action: .startAddPasture)
+            setBtnForCase(action: .dropPin)
     
         }
     }
     
     func setBtnForCase(action: ButtonAction) {
         switch action {
-            case .startAddPasture:
-                self.addBtn.setTitle("ADD PASTURE MAP", for: .normal)
-                UIView.animate(withDuration: 0.5, animations: {
-                    self.addBtn.backgroundColor = UIColor.white
-                })
-                self.addBtn.setTitleColor(UIColor.darkGray, for: .normal)
-                self.crosshairImage.isHidden = true
-                self.actionForButton = .startAddPasture
-        
             case .dropPin:
-                self.addBtn.setTitle("DROP BOUNDARY", for: .normal)
                 UIView.animate(withDuration: 0.5, animations: {
+                    self.addBtn.setTitle(LBL_DROP_BOUNDARY, for: .normal)
                     self.addBtn.backgroundColor = UIColor.white
+                    self.addBtn.setTitleColor(UIColor.darkGray, for: .normal)
+                    self.crosshairImage.isHidden = false
                 })
-                self.addBtn.setTitleColor(UIColor.blue, for: .normal)
                 self.actionForButton = .dropPin
-        
+            
             case .savePasture:
-                self.addBtn.setTitle("SAVE PASTURE MAP", for: .normal)
                 UIView.animate(withDuration: 0.5, animations: {
+                    self.addBtn.setTitle(LBL_SAVE_PASTURE, for: .normal)
                     self.addBtn.backgroundColor = UIColor.red
+                    self.addBtn.setTitleColor(UIColor.white, for: .normal)
+                    self.crosshairImage.isHidden = true
                 })
-                self.addBtn.setTitleColor(UIColor.white, for: .normal)
                 self.actionForButton = .savePasture
         }
     }
@@ -158,8 +144,6 @@ extension ViewController: MKMapViewDelegate{
         annotation.coordinate = boundaryPlacemark.coordinate
         self.mapView.addAnnotation(annotation)
         self.restoreTimer()
-        self.setTimer()
-        
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -170,6 +154,37 @@ extension ViewController: MKMapViewDelegate{
         }
         
         return MKPolygonRenderer()
+    }
+    
+    func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        setBtnForCase(action: .dropPin)
+        restoreTimer()
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        setBtnForCase(action: .dropPin)
+        restoreTimer()
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        if let annotation = annotation as? MKPointAnnotation {
+            let identifier = "PASTUREMAP"
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+            
+            if annotationView == nil {
+                annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            } else{
+                annotationView?.annotation = annotation
+            }
+            
+            annotationView?.image = UIImage(named: IMG_CATTLE_HEAD)
+            return annotationView
+            
+        }
+        
+        return nil
+
     }
     
 }

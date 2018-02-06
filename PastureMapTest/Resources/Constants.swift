@@ -8,4 +8,7 @@
 
 import Foundation
 
-let delay = 3
+let delay = 2
+let LBL_DROP_BOUNDARY = "DROP BOUNDARY"
+let LBL_SAVE_PASTURE = "SAVE PASTURE MAP"
+let IMG_CATTLE_HEAD = "cattlehead"
