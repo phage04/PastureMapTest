@@ -1,12 +1,15 @@
 PODS:
   - Each (1.2.0)
+  - RevealingSplashView (0.4.0)
 
 DEPENDENCIES:
   - Each (~> 1.2)
+  - RevealingSplashView
 
 SPEC CHECKSUMS:
   Each: 53d089bc231f4a7221ed201bf23ac343c5c4d560
+  RevealingSplashView: 72be158ad5e1bc72713e8f78383dc3e1803ce4d1
 
-PODFILE CHECKSUM: c86dfbf687dfe3deec29f354b2c4ceaeb8986d75
+PODFILE CHECKSUM: d3903fde197320a068fbd65a284e524e2f6265e3
 
 COCOAPODS: 1.3.1

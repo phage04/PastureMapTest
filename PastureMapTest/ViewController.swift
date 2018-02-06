@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 import Each
+import RevealingSplashView
 
 enum ButtonAction {
     case dropPin
@@ -28,11 +29,13 @@ class ViewController: UIViewController {
     var timer = Each(1).seconds
     var countdown = delay
     var pastureMapBoundaries = [CLLocationCoordinate2D]()
-   
+    let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "pastureMapLogo")!, iconInitialSize: CGSize(width: 80, height: 80), backgroundColor: UIColor.white)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.addSubview(revealingSplashView)
+        revealingSplashView.animationType = SplashAnimationType.heartBeat
+        revealingSplashView.startAnimation()
         manager = CLLocationManager()
         manager?.delegate = self
         manager?.desiredAccuracy = kCLLocationAccuracyBest
@@ -130,6 +133,7 @@ extension ViewController: CLLocationManagerDelegate{
                 if status == .authorizedAlways{
                     mapView.showsUserLocation = false
                     mapView.userTrackingMode = .follow
+                    revealingSplashView.heartAttack = true
                 }
        }
 }

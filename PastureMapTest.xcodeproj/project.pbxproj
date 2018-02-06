@@ -196,10 +196,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PastureMapTest/Pods-PastureMapTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Each/Each.framework",
+				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Each.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
