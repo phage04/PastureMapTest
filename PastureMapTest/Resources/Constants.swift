@@ -8,4 +8,4 @@
 
 import Foundation
 
-let delay = 2
+let delay = 3
