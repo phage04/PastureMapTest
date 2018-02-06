@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>To be able to use the PastureMap App!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To be able to use the PastureMap App!</string>
 </dict>
 </plist>

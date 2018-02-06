@@ -1,0 +1,6 @@
+framework module Pods_PastureMapTest {
+  umbrella header "Pods-PastureMapTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

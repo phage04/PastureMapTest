@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40D8C29DF6CA82D12B2FA280 /* Pods_PastureMapTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A9DE7FB9CD7367F53B07B2 /* Pods_PastureMapTest.framework */; };
 		DE7E719B2029A38E003A82A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7E719A2029A38E003A82A4 /* AppDelegate.swift */; };
 		DE7E719D2029A38E003A82A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7E719C2029A38E003A82A4 /* ViewController.swift */; };
 		DE7E71A02029A38E003A82A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7E719E2029A38E003A82A4 /* Main.storyboard */; };
 		DE7E71A22029A38E003A82A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE7E71A12029A38E003A82A4 /* Assets.xcassets */; };
 		DE7E71A52029A38E003A82A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7E71A32029A38E003A82A4 /* LaunchScreen.storyboard */; };
+		DE7E71B32029C516003A82A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7E71B22029C516003A82A4 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35A9DE7FB9CD7367F53B07B2 /* Pods_PastureMapTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PastureMapTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B67DCDCE5D372FAF81DB3102 /* Pods-PastureMapTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PastureMapTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-PastureMapTest/Pods-PastureMapTest.release.xcconfig"; sourceTree = "<group>"; };
 		DE7E71972029A38E003A82A4 /* PastureMapTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PastureMapTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7E719A2029A38E003A82A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE7E719C2029A38E003A82A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		DE7E71A12029A38E003A82A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE7E71A42029A38E003A82A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE7E71A62029A38E003A82A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE7E71B22029C516003A82A4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FD58CA23ADEEB6C1E1AA9593 /* Pods-PastureMapTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PastureMapTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PastureMapTest/Pods-PastureMapTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40D8C29DF6CA82D12B2FA280 /* Pods_PastureMapTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9DF92569B7DE62B69B784CA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35A9DE7FB9CD7367F53B07B2 /* Pods_PastureMapTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C43FA662E4E7A6C7E3F1E037 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD58CA23ADEEB6C1E1AA9593 /* Pods-PastureMapTest.debug.xcconfig */,
+				B67DCDCE5D372FAF81DB3102 /* Pods-PastureMapTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DE7E718E2029A38E003A82A4 = {
 			isa = PBXGroup;
 			children = (
 				DE7E71992029A38E003A82A4 /* PastureMapTest */,
 				DE7E71982029A38E003A82A4 /* Products */,
+				C43FA662E4E7A6C7E3F1E037 /* Pods */,
+				9DF92569B7DE62B69B784CA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +80,7 @@
 		DE7E71992029A38E003A82A4 /* PastureMapTest */ = {
 			isa = PBXGroup;
 			children = (
+				DE7E71B12029C507003A82A4 /* Resources */,
 				DE7E719A2029A38E003A82A4 /* AppDelegate.swift */,
 				DE7E719C2029A38E003A82A4 /* ViewController.swift */,
 				DE7E719E2029A38E003A82A4 /* Main.storyboard */,
@@ -64,6 +91,14 @@
 			path = PastureMapTest;
 			sourceTree = "<group>";
 		};
+		DE7E71B12029C507003A82A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE7E71B22029C516003A82A4 /* Constants.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +106,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE7E71A92029A38E003A82A4 /* Build configuration list for PBXNativeTarget "PastureMapTest" */;
 			buildPhases = (
+				076EF81753F27EA78C82F31D /* [CP] Check Pods Manifest.lock */,
 				DE7E71932029A38E003A82A4 /* Sources */,
 				DE7E71942029A38E003A82A4 /* Frameworks */,
 				DE7E71952029A38E003A82A4 /* Resources */,
+				9F6E3FC502B7CBDC7461253C /* [CP] Embed Pods Frameworks */,
+				DFD67C0CC71F46A3283D2000 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,11 +169,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		076EF81753F27EA78C82F31D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PastureMapTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F6E3FC502B7CBDC7461253C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PastureMapTest/Pods-PastureMapTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Each/Each.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Each.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PastureMapTest/Pods-PastureMapTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFD67C0CC71F46A3283D2000 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PastureMapTest/Pods-PastureMapTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DE7E71932029A38E003A82A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7E71B32029C516003A82A4 /* Constants.swift in Sources */,
 				DE7E719D2029A38E003A82A4 /* ViewController.swift in Sources */,
 				DE7E719B2029A38E003A82A4 /* AppDelegate.swift in Sources */,
 			);
@@ -272,6 +365,7 @@
 		};
 		DE7E71AA2029A38E003A82A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD58CA23ADEEB6C1E1AA9593 /* Pods-PastureMapTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +381,7 @@
 		};
 		DE7E71AB2029A38E003A82A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B67DCDCE5D372FAF81DB3102 /* Pods-PastureMapTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
